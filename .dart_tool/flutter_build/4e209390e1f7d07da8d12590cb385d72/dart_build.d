@@ -1,0 +1,1 @@
+ /Users/ragedalharby/Getx-Assignment/.dart_tool/flutter_build/4e209390e1f7d07da8d12590cb385d72/dart_build_result.json: 
