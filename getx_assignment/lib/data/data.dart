@@ -1,7 +1,8 @@
-prepository data is 
 
-```dart
-{
+
+import 'package:getx_assignment/model/employee_model.dart';
+
+final Map<String, dynamic> data = {
   "departments": {
     "engineering": {
       "employees": [
@@ -12,7 +13,7 @@ prepository data is
           "contact": {
             "email": "ahmed@example.com",
             "phone": "+1234567890"
-          },
+          }
         },
         {
           "id": "E002",
@@ -30,9 +31,8 @@ prepository data is
             }
           ]
         }
-      ],
+      ]
     },
-
     "marketing": {
       "employees": [
         {
@@ -144,27 +144,11 @@ prepository data is
       ]
     }
   }
-
 };
-```
 
-## Assignment:
-
-In this assignment, you will create functions to display all engineering employees, display the projects of each employees.
-
-## Requirements:
-1. Create a Dart project
-2. Create a “model” files to represent object with the required properties.
-3. Implement a function to display all engineering employees. This function should return a JSON data containing all engineering employees object.
-4. Implement a function to display the projects of each employees. This function should return a JSON data containing display the projects of each employees.
-
-## Evaluation Criteria:
-The assignmen will be evaluated based on the following criteria:
-1. Completion: The extent to which the assignment meets all the minimum requirements.
-2. Quality: The overall quality of the project, including the organization, and ease of maintenance. Well-structured and readable code will be favorably evaluated.
-
-## Submission Details:
-Deadline: 25 May 2025
-Submission Format: Provide your Dart code file(s).
-
-Good luck, and happy coding!
+List<Employee> getEngineeringEmployees() {
+  
+  return data['departments']['engineering']['employees']
+      .map<Employee>((json) => Employee.fromJson(json))
+      .toList();
+}
